@@ -203,7 +203,7 @@ def playlist_to_dataframe(playlist_endpoint, token_type, access_token, offset=0,
             # JSON tracks of the next offset (Tracks em JSON do próximo offset)
             playlist = get_playlist(playlist=playlist_endpoint, token_type=token_type, access_token=access_token, offset=page + limit, limit=limit)
     
-    # DataFrame's columns names (Nomes das colunas do DataFrame)
+    # DataFrame's features names (Nomes das features do DataFrame)
     features = ['id', 'name', 'artists', 'duration_ms', 'popularity', 'danceability', 'energy', 'key', 'loudness', 'mode', 'speechiness',
                'acousticness', 'instrumentalness', 'liveness', 'valence', 'tempo']
     # Transforming into DataFrame (Transformando em DataFrame)
