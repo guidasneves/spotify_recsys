@@ -1,8 +1,12 @@
+os
+requests
+base64
+python-dotenv
 pandas
 numpy
-matplotlib
+tensorflow
+scikit-learn
+shap
 seaborn
-dotenv
-requests
-os
-base64
+random
+warnings
