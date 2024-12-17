@@ -104,6 +104,9 @@ def model_compile(
     Returns:
         model -- Compiled model (Modelo compilado).
     """
+    # Clearing all internal variables (Limpando todas as variáveis internas)
+    tf.keras.backend.clear_session()
+    
     # Setting the user and item neural network (Definindo a rede neural do usuário e do item)
     user_NN = user_nn(
         user_units,

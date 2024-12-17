@@ -71,32 +71,37 @@ def plot_hist_vs(X):
     plt.legend(loc='best')
     plt.show()
 
-def plot_loss(history):
+def plot_history(history):
     """
     [EN-US]
-    Plots the model's training loss history per epoch.
+    Plots the history of the model's training loss and metrics by epoch.
     
     [PT-BR]
-    Plota o histórico da loss do treinamento do model por epocho.
+    Plota o histórico da loss e da métrica do treinamento do model por epoch.
 
     Arguments:
         history -- history returned by model training (histórico retornado pelo treino do modelo).
     """
-    # Accessing the vector with the history of each metric (Acessando o vetor com o histórico de cada métrica).
+    # Accessing the vector with the loss history (Acessando o vetor com o histórico da loss)
     loss = history.history['loss']
-    # Selecting the number of epochs (Selecionando a quantidade de epochs).
+    # Accessing the vector with the metric history (Acessando o vetor com o histórico da métrica)
+    metric = history.history['auc']
+    # Selecting the number of epochs (Selecionando a quantidade de epochs)
     epochs = range(len(loss))
-
-    # Defining the figure and creating the plots (Definindo a figura e criando os plots).
-    fig, ax = plt.subplots(1, 2, figsize=(12, 6))
-    fig.suptitle('Loss History per Epoch')
-    # Plotting with all epochs (Plotando com todas as epochs).
-    ax[0].plot(epochs, loss, color='g')
-    ax[0].set_ylabel('loss')
-    ax[0].set_xlabel('epochs')
-
-    # Plotting only the final 25% of the epoch (PLotando apenas os 25% final da epoch). 
-    ax[1].plot(epochs, loss, color='g')
-    ax[1].set_xlim(int((len(loss) * .75)), len(loss))
-    ax[1].set_xlabel('epochs')
+    # Defining the list with the values to plot (Definindo a lista com os valores para plotar)
+    utils = [loss, 'loss'], [metric, 'auc']
+    
+    # Defining the figure and creating the plots (Definindo a figura e criando os plots)
+    fig, ax = plt.subplots(2, 2, figsize=(12, 6))
+    for i in range(2):
+        fig.suptitle('Performance per Epoch')
+        # Plotting with all epochs (Plotando com todas as epochs)
+        ax[i, 0].plot(epochs, utils[i][0], color='g')
+        ax[i, 0].set_ylabel(utils[i][1])
+        ax[i, 0].set_xlabel('epochs')
+    
+        # Plotting only the final 25% of the epoch (PLotando apenas os 25% final da epoch) 
+        ax[i, 1].plot(epochs, utils[i][0], color='g')
+        ax[i, 1].set_xlim(int((len(utils[i][0]) * .75)), len(utils[i][0]))
+        ax[i, 1].set_xlabel('epochs')
     plt.show()

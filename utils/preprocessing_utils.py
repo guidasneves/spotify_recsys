@@ -28,6 +28,46 @@ def get_user_dataset(user_vec, item_df):
     user_df = pd.DataFrame(user_df, columns=features)
     return user_df
 
+def df_to_tfdataset(X, y, shuffle_buffer=1000, batch_size=32, shuffle=True):
+    """
+    [EN-US]
+    Transforms a dataframe or numpy array into a tf.data.Dataset object, applies preprocessing and optimizes performance.
+    
+    [PT-BR]
+    Transforma um dataframe ou matriz numpy em um objeto tf.data.Dataset, aplica os pré-processamentos e otimizan o desempenho.
+    
+    Arguments:
+        X -- DataFrame or numpy array with features (DataFrame ou matriz numpy com as features).
+        y -- DataFrame or numpy array with labels (DataFrame ou matriz numpy com os labels).
+        shuffle_buffer -- Elements that will initially be left out and one of them is randomly chosen as part of the random dataset
+                          (Elementos que serão inicialmente deixados de lado e um deles é escolhido aleatoriamente como parte do dataset aleatorio).
+        batch_size -- Size of dataset mini-batches (Tamanho dos mini-batches do dataset).
+        shuffle -- If True, the dataset will be shuffled, otherwise not (Caso seja True, o dataset será embaralhado, caso contrário, não).
+    
+    Return:
+        dataset -- Preprocessed tf.data.Dataset (tf.data.Dataset pré-processado).
+    """
+    # Concatenating the dataset X with the labels y
+    # Concatenando o dataset X com os labels y
+    dataset = pd.concat([X, y], axis=1, ignore_index=True)
+    # Transforming the concatenated dataset into a tf.data.Dataset object
+    # Transformando o dataset concatenado em um objeto tf.data.Dataset
+    dataset = tf.data.Dataset.from_tensor_slices(dataset)
+    # Storing elements in memory (Armazenando elementos na memória)
+    dataset = dataset.cache()
+    if shuffle:
+        # Shuffling the dataset (Embaralhando o dataset)
+        dataset = dataset.shuffle(buffer_size=shuffle_buffer)
+    # Applying the final preprocessing
+    # Aplicando os pré-processamentos finais
+    dataset = (
+        dataset
+        .map(lambda x: (x[:-1], window[-1])) # Separating features from labels into tuples (Separando as features dos labels em tuplas)
+        .batch(batch_size) # Creating batches of this dataset (Criando batches desse dataset)
+        .prefetch(buffer_size=tf.data.AUTOTUNE) # Allowing parallel execution of this dataset (Permitindo a execução paralela dessa dataset)
+    )
+    return dataset
+
 class L2_Norm(tf.keras.Layer):
     """
     [EN-US]
