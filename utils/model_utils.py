@@ -1,8 +1,9 @@
 from tensorflow.keras.layers import Dense, BatchNormalization, Input, Dot, Layer
 from tensorflow.keras.models import Sequential
-from tensorflow.keras.activations import sigmoid
 from tensorflow.keras import Model
 from tensorflow.keras.regularizers import l2
+from tensorflow.keras.optimizers import Adam
+from tensorflow.keras.losses import MeanSquaredError
 from preprocessing_utils import L2_Norm
 
 def user_nn(units=[256, 128, 64], num_outputs=32, lambda_r=1e-3):
@@ -137,11 +138,7 @@ def model_compile(
 
     # Computing the dot product between the user vector vu and the item vector vi
     # Calculando o dot product entre o vetor do usuário vu e o vetor de itens vi
-    dot_product = Dot(axes=1)([vu, vr])
-
-    # Computing the sigmoid function on the dot product output
-    # Calculando a função sigmoide sobre o output do dot product
-    output = sigmoid(dot_product)
+    output = Dot(axes=1)([vu, vr])
 
     # Defining the model depending on the parameter value
     # Definindo o modelo dependendo do valor do parâmetro
@@ -160,3 +157,45 @@ def model_compile(
     model.compile(loss=loss, optimizer=opt, metrics=['auc'])
 
     return model
+
+def hiperparams_tune(hiperparams):
+    """
+    [EN-US]
+    Setting the model for hyperparameter optimization.
+
+    [PT-BR]
+    Define o modelo para a otimização dos hiperparâmetros.
+
+    Argument:
+        hyperparams -- List of hyperparameter value ranges to be optimized
+                       (Lista com as faixas de valores dos hiperparâmetros para serem otimizados).
+
+    Return:
+        -acc -- Performance metric times negative (Métrica de avaliação vezes negativo). 
+    """
+    # Setting the threshold to define the probabilities for the classes
+    # Definindo o threshold para definir as probabilidades para as classes
+    threshold = .5
+    # Setting the hyperparameters
+    # Definindo os hiperparâmetros
+    LR = hiperparams[0]
+    lambda_r = hiperparams[1]
+    # Setting the loss and the optimizer
+    # Definindo a loss e o otimizador
+    OPT = Adam(learning_rate=LR)
+    LOSS = MeanSquaredError()
+
+    # Defining the model to perform the optimization
+    # Definindo o modelo para performar a otimização
+    model = model_compile(OPT, LOSS, num_user_features, num_item_features, lambda_r=lambda_r)
+    model.fit([user_opt, X_opt], y, epochs=200, verbose=0)
+
+    # Computing prediction and performance
+    # Calculando a previsão e o desempenho
+    acc = model.predict([user_opt, X_opt], verbose=0)
+    acc = np.where(acc >= threshold, 1, 0)
+    acc = np.mean(acc == y)
+
+    # -acc, because we want the pair of hyperparameters that minimizes the metric
+    # -acc, porque queremos o par de hiperparâmetros que minimize a métrica
+    return -acc
