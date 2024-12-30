@@ -4,9 +4,10 @@ base64
 python-dotenv
 pandas
 numpy
+random
 tensorflow
 scikit-learn
 shap
 seaborn
-random
+plotly
 warnings

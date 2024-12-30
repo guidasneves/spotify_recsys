@@ -5,6 +5,7 @@ from tensorflow.keras.regularizers import l2
 from tensorflow.keras.optimizers import Adam
 from tensorflow.keras.losses import MeanSquaredError
 from preprocessing_utils import L2_Norm
+import numpy as np
 
 def user_nn(units=[256, 128, 64], num_outputs=32, lambda_r=1e-3):
     """
@@ -21,7 +22,7 @@ def user_nn(units=[256, 128, 64], num_outputs=32, lambda_r=1e-3):
         lambda_r -- Value of the layer regularization hyperparameter, lambda
                     (Valor do hiperparâmetro de regularização da layer, lambda).
 
-    Returns:
+    Return:
         user_NN -- User neural network (Rede neural do usuário).
     """
     # Defining the user's neural network, with 3 dense hidden layers, and 1 output dense layer. Between them we are calculating the batch norm, with the BatchNormalization() layer
@@ -52,7 +53,7 @@ def item_nn(units=[256, 128, 64], num_outputs=32, lambda_r=1e-3):
         lambda_r -- Value of the layer regularization hyperparameter, lambda
                     (Valor do hiperparâmetro de regularização da layer, lambda).
 
-    Returns:
+    Return:
         item_NN -- Item neural network (Rede neural do item).
     """
     # Defining the item's neural network, with 3 dense hidden layers, and 1 output dense layer. Between them we are calculating the batch norm, with the BatchNormalization() layer
@@ -101,7 +102,7 @@ def model_compile(
         lambda_r -- Value of the layer regularization hyperparameter, lambda
                     (Valor do hiperparâmetro de regularização da layer, lambda).
 
-    Returns:
+    Return:
         model -- Compiled model (Modelo compilado).
     """
     # Clearing all internal variables (Limpando todas as variáveis internas)

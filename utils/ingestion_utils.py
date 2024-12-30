@@ -78,7 +78,7 @@ def get_playlist(playlist, token_type, access_token, offset=0, limit=100):
         limit -- The maximum number of items to return. Default: 100. Minimum: 1. Maximum: 100
                  (O número máximo de itens a serem retornados. Padrão: 100. Mínimo: 1. Máximo: 100).
     
-    Returns:
+    Return:
         response.json() -- Pages of tracks in JSON (Páginas de tracks em JSON).
     """
     # Turning the Spotify playlist URL into just the Playlist ID to send the get request (Transformando o Spotify URL da playlist apenas no Playlist ID para enviar a requisição get)
@@ -93,8 +93,8 @@ def get_playlist(playlist, token_type, access_token, offset=0, limit=100):
     response = get(url=endpoint, headers=headers)
     # If the request status code is not 200 (Caso o status code da requisição não seja 200)
     if response.status_code != 200:
-        print('Error! Dados da playlist não extraídos.')
-
+        print('Error! Playlist data not extracted.')
+    
     return response.json()
 
 def track_features(track_id, token_type, access_token):
@@ -113,7 +113,7 @@ def track_features(track_id, token_type, access_token):
         access_token -- An access token that can be provided in subsequent calls, for example to Spotify Web API services
                         (Um token de acesso que pode ser fornecido em chamadas subsequentes, por exemplo, para serviços Spotify Web API).
     
-    Returns:
+    Return:
         response.json() -- Audio features for one track in JSON
                            (Features de áudio para uma track em JSON).
     """
@@ -127,9 +127,9 @@ def track_features(track_id, token_type, access_token):
     response = get(url=endpoint, headers=headers)
     # If the request status code is not 200 (Caso o status code da requisição não seja 200)
     if response.status_code != 200:
-        print('Error! Dados da track não extraídos.')
-
-    return response.json()
+        print('Error! Track data not extracted.')
+    
+    return response.json()    
 
 def playlist_to_dataframe(playlist_endpoint, token_type, access_token, offset=0, limit=100, label=None):
     """
@@ -152,7 +152,7 @@ def playlist_to_dataframe(playlist_endpoint, token_type, access_token, offset=0,
         label -- The label that the playlist will be classified by. Default: None. Label 1 for good playlist and 0 for bad playlist
                  (O label que a playlist será classificada. Padrão: None. Label 1 para playlist boa e 0 para playlist ruim).
         
-    Returns:
+    Return:
         df -- Pandas DataFrame with all tracks and the features of each track in the playlist
               (DataFrame pandas com todas as tracks e as features de cada track da playlist).
     """

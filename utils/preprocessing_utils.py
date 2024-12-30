@@ -10,7 +10,7 @@ def get_user_dataset(user_vec, item_df):
     [PT-BR]
     Cria o Dataset do usuário com a mesma quantidade de exemplos do que o dataset que foi dado como referência.
     
-    Argument:
+    Arguments:
         user_vec -- Row vector with user features
                     (Vetor de linha com as features do usuário).
         item_df -- Reference Dataset to create User Dataset
@@ -62,7 +62,7 @@ def df_to_tfdataset(X, y, shuffle_buffer=1000, batch_size=32, shuffle=True):
     # Aplicando os pré-processamentos finais
     dataset = (
         dataset
-        .map(lambda x: (x[:-1], window[-1])) # Separating features from labels into tuples (Separando as features dos labels em tuplas)
+        .map(lambda x: (x[:-1], x[-1])) # Separating features from labels into tuples (Separando as features dos labels em tuplas)
         .batch(batch_size) # Creating batches of this dataset (Criando batches desse dataset)
         .prefetch(buffer_size=tf.data.AUTOTUNE) # Allowing parallel execution of this dataset (Permitindo a execução paralela dessa dataset)
     )
@@ -74,7 +74,7 @@ class L2_Norm(tf.keras.Layer):
     Transforms the L2 norm computation into a layer.
 
     [PT-BR]
-    Transforma o cálculo da nomra L2 em uma layer.
+    Transforma o cálculo da norma L2 em uma layer.
     """
     def call(self, X):
         """

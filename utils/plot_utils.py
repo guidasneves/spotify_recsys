@@ -42,7 +42,7 @@ def plot_hist_vs(X):
     [PT-BR]
     Retorna um histograma comparando a distribuição das features numéricas entre a classe positiva e negativa.
     
-    Arguments:
+    Argument:
         X -- X matrix (Matriz X).
     """
     # Excluding categorical features (Excluindo as features categóricas).
@@ -79,7 +79,7 @@ def plot_history(history):
     [PT-BR]
     Plota o histórico da loss e da métrica do treinamento do model por epoch.
 
-    Arguments:
+    Argument:
         history -- history returned by model training (histórico retornado pelo treino do modelo).
     """
     # Accessing the vector with the loss history (Acessando o vetor com o histórico da loss)
