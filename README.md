@@ -84,10 +84,10 @@ CLIENT_SECRET_SPOTIFY: o client secret gerado após o registro do seu aplicativo
 
 Use the Jupiter Notebook [end_to_end_recsys.ipynb](./notebooks/end_to_end_recsys.ipynb) in the directory `./notebook/` with the complete explanation of the system and the complete code.
 
-Note: I thank my mentor [Raphael Lima](https://www.linkedin.com/in/raphael-meira-lima/) for his guidance throughout the creation of this project.
+Note: I would like to thank my mentor [Raphael Lima](https://www.linkedin.com/in/raphael-meira-lima/) for his guidance throughout the creation of this project.
 
 **[PT-BR]**
 
 Use o Jupiter Notebook [end_to_end_recsys.ipynb](./notebooks/end_to_end_recsys.ipynb) no diretório `./notebook/` com a explicação completa do sistema e o código completo.
 
-Nota: Agradeço ao meu mentor [Raphael Lima](https://www.linkedin.com/in/raphael-meira-lima/) pela orientação durante a criação deste projeto.
+Nota: agradeço ao meu mentor [Raphael Lima](https://www.linkedin.com/in/raphael-meira-lima/) pela orientação durante a criação deste projeto.
