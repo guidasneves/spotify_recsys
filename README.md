@@ -2,10 +2,12 @@
 # Spotify RecSystem End to End (Sistema de Recomendação Spotify de Ponta a Ponta)
 <img align='center' src='../images/content-based-filtering.png' style='width:800px;'>
 **[EN-US]**
+
 * Medium article about this project in English: [Spotify Tracks Recommender System with Deep Learning]();
 * Complete code for this project, with all detailed explanations in English and Portuguese: [end_to_end_recsys.ipynb](./notebooks/end_to_end_recsys.ipynb).
 
 **[PT-BR]**
+
 * Artigo no Medium desse projeto em inglês: [Spotify Tracks Recommender System with Deep Learning]();
 * Código completo desse projeto, com todas as explicações detalhas em inglês e em português: [end_to_end_recsys.ipynb](./notebooks/end_to_end_recsys.ipynb).
 
@@ -72,7 +74,8 @@ CLIENT_SECRET_SPOTIFY: o client secret gerado após o registro do seu aplicativo
 <a name="5"></a>
 ## Run
 **[EN-US]**
-Use the Jupiter Notebook [end_to_end_recsys.ipynb][./notebooks/end_to_end_recsys.ipynb] in the directory `./notebook/` with the complete explanation of the system and the complete code.
+
+Use the Jupiter Notebook [end_to_end_recsys.ipynb](./notebooks/end_to_end_recsys.ipynb) in the directory `./notebook/` with the complete explanation of the system and the complete code.
 
 Note: I thank my mentor Rafael Lima for his guidance throughout the creation of this project.
 
