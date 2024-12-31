@@ -90,4 +90,4 @@ Note: I thank my mentor [Raphael Lima](https://www.linkedin.com/in/raphael-meira
 
 Use o Jupiter Notebook [end_to_end_recsys.ipynb](./notebooks/end_to_end_recsys.ipynb) no diretório `./notebook/` com a explicação completa do sistema e o código completo.
 
-Nota: Agradeço ao meu mentor [Raphael Lima](https://www.linkedin.com/in/raphael-meira-lima/) pela orientação durante a criação deste projeto.
+Nota: agradeço ao meu mentor [Raphael Lima](https://www.linkedin.com/in/raphael-meira-lima/) pela orientação durante a criação deste projeto.
