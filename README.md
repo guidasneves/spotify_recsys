@@ -22,6 +22,9 @@ The system was created end-to-end, that is, from the connection and authorizatio
 
 The Content-Based Filtering algorithm was created using the [tensorflow](https://www.tensorflow.org/?hl=pt-br) framework.
 
+**Note:** Spotify has removed the feature to extract the features of each track from the API.
+<img align='center' src='./images/track-features.png' style='width:800px;'>
+
 **[PT-BR]**
 
 Esse repositório contêm a implementação de um sistema de recomendação de músicas do Spotify com o algoritmo Content-Based Filtering utilizando Deep Learning.
@@ -29,6 +32,9 @@ Esse repositório contêm a implementação de um sistema de recomendação de m
 O sistema foi criado de ponta a ponta, ou seja, desde a conexão e autorização com a [API do Spotify](https://developer.spotify.com/), extração dos dados da API, realização da análise exploratória e do pré-processamento dos dados, definição do modelo e inferência, dada as músicas recomendadas, elas são adicionadas em uma playlist do Spotify.
 
 O algoritmo do Content-Based Filtering foi criado utilizando o framework [tensorflow](https://www.tensorflow.org/?hl=pt-br).
+
+**Nota:** o Spotify removeu o feature para extrair as features de cada track da API.
+<img align='center' src='./images/track-features.png' style='width:800px;'>
 
 <a name="3"></a>
 ## Table of Contents
