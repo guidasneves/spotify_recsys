@@ -1,6 +1,7 @@
 <a name="1"></a>
 # Spotify RecSystem End to End (Sistema de Recomendação Spotify de Ponta a Ponta)
 <img align='center' src='../images/content-based-filtering.png' style='width:800px;'>
+
 **[EN-US]**
 
 * Medium article about this project in English: [Spotify Tracks Recommender System with Deep Learning]();
