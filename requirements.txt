@@ -1,0 +1,13 @@
+os
+requests
+base64
+python-dotenv
+pandas
+numpy
+random
+tensorflow
+scikit-learn
+shap
+seaborn
+plotly
+warnings
