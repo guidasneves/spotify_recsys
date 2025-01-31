@@ -20,21 +20,21 @@ import tensorflow as tf
 from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import train_test_split
 
-# Defining global variables with the path of each directory with data (Definindo as variáveis globais com o path de cada diretório com os dados).
+# Setting global variables with the path of each directory with data (Definindo as variáveis globais com o path de cada diretório com os dados).
 PATH_R = os.path.join(PROJECT_ROOT, 'data\\raw')
 PATH_T = os.path.join(PROJECT_ROOT, 'data\\transformed')
 PATH_P = os.path.join(PROJECT_ROOT, 'data\\preprocessed')
 
 # Reading the dataset from the `../data/transformed/` directory (Lendo o dataset do diretório `../data/transformed/`)
-X = pd.read_csv(os.path.join(PATH_T, 'dataset.csv'))
+data = pd.read_csv(os.path.join(PATH_T, 'data.csv'))
 
 # Defining the dataset with only the track ID, song and artist names (Definindo o dataset apenas com o ID das tracks, os nomes das músicas e dos artistas)
-items = X.iloc[:, :3].copy()
+items = data.iloc[:, :3].copy()
 # Loading the items set in the `../data/tranfomed/` directory (Carregando o set de itens no diretório `../data/preprocessed/`)
 items.to_csv(os.path.join(PATH_T, 'items.csv'), index=False)
 
 # Creating a dataset with only numerical features (Criando um dataset apenas com as features numéricas)
-X_num = X.drop(columns=['id', 'name', 'artists', 'y', 'duration_ms']).copy()
+X_num = data.drop(columns=['id', 'name', 'artists', 'y', 'duration_ms']).copy()
 
 # Creating the one-hot encoding of the `key` feature (Criando o one-hot encoding da feature `key`)
 key_oh = pd.get_dummies(X_num['key'], prefix='key', drop_first=True, dtype=np.int64)
@@ -70,11 +70,11 @@ user_df = get_user_dataset(
 
 # Exporting the pre-processed numeric dataset into the `../data/preprocessed/` directory, however, without scaling, to adjust the final playlist dataset for the recommendations
 # Exportando o dataset numérico pré-processado no diretório `../data/preprocessed/`, porém, sem o escalonamento, para ajustar o dataset da playlist final para as recomendações
-X_num_oh.to_csv(os.path.join(PATH_P, 'X.csv'), index=False)
+X_num_oh.to_csv(os.path.join(PATH_P, 'X_pre.csv'), index=False)
 
 # Creating the column vector of the target label y to be divided along
 # Criando o vetor de coluna do target label y para ser divido junto
-y = X.iloc[:, -2].copy().to_numpy().reshape((-1, 1))
+y = data.iloc[:, -2].copy().to_numpy().reshape((-1, 1))
 
 # Splitting the dataset between the training, validation and test sets (Dividindo o dataset entre o set de treino, validação e teste)
 item_train, item_, y_train, y_ = train_test_split(X_num_oh, y, test_size=.4, random_state=42)
@@ -111,46 +111,46 @@ item_columns, user_columns = item_train.columns, user_train.columns
 pd.DataFrame(
     item_train_norm,
     columns=item_columns
-).to_csv(os.path.join(PATH_T, 'item_train_norm.csv'), index=False)
+).to_csv(os.path.join(PATH_P, 'item_train_norm.csv'), index=False)
 # Train target y
 pd.DataFrame(
     y_train,
     columns=['y']
-).to_csv(os.path.join(PATH_T, 'y_train.csv'), index=False)
+).to_csv(os.path.join(PATH_P, 'y_train.csv'), index=False)
 # User train dataset
 pd.DataFrame(
     user_train_norm,
     columns=user_columns
-).to_csv(os.path.join(PATH_T, 'user_train_norm.csv'), index=False)
+).to_csv(os.path.join(PATH_P, 'user_train_norm.csv'), index=False)
 
 # Item cv dataset
 pd.DataFrame(
     item_cv_norm,
     columns=item_columns
-).to_csv(os.path.join(PATH_T, 'item_cv_norm.csv'), index=False)
+).to_csv(os.path.join(PATH_P, 'item_cv_norm.csv'), index=False)
 # Cv target y
 pd.DataFrame(
     y_cv,
     columns=['y']
-).to_csv(os.path.join(PATH_T, 'y_cv.csv'), index=False)
+).to_csv(os.path.join(PATH_P, 'y_cv.csv'), index=False)
 # User cv dataset
 pd.DataFrame(
     user_cv_norm,
     columns=user_columns
-).to_csv(os.path.join(PATH_T, 'user_cv_norm.csv'), index=False)
+).to_csv(os.path.join(PATH_P, 'user_cv_norm.csv'), index=False)
 
 # Item test dataset
 pd.DataFrame(
     item_test_norm,
     columns=item_columns
-).to_csv(os.path.join(PATH_T, 'item_test_norm.csv'), index=False)
+).to_csv(os.path.join(PATH_P, 'item_test_norm.csv'), index=False)
 # Test target y
 pd.DataFrame(
     y_test,
     columns=['y']
-).to_csv(os.path.join(PATH_T, 'y_test.csv'), index=False)
+).to_csv(os.path.join(PATH_P, 'y_test.csv'), index=False)
 # User test dataset
 pd.DataFrame(
     user_test_norm,
     columns=user_columns
-).to_csv(os.path.join(PATH_T, 'user_test_norm.csv'), index=False)
+).to_csv(os.path.join(PATH_P, 'user_test_norm.csv'), index=False)

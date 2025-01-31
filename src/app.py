@@ -28,7 +28,7 @@ from sklearn.preprocessing import StandardScaler
 from warnings import simplefilter
 simplefilter('ignore')
 
-# Defining global variables with the path of each directory with data (Definindo as variáveis globais com o path de cada diretório com os dados).
+# Setting global variables with the path of each directory with data (Definindo as variáveis globais com o path de cada diretório com os dados).
 PATH_T = os.path.join(PROJECT_ROOT, 'data\\transformed')
 PATH_P = os.path.join(PROJECT_ROOT, 'data\\preprocessed')
 PATH_M = os.path.join(PROJECT_ROOT, 'model')

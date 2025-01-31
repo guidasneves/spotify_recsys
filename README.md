@@ -1,6 +1,6 @@
 <a name="1"></a>
 # End to End Spotify Recommender System (Sistema de Recomendação Spotify de Ponta a Ponta)
-<img align='center' src='./images/content-based-filtering.png' style='width:800px;'>
+<img align='center' src='./figures/content-based-filtering.png' style='width:800px;'>
 
 **[EN-US]**
 
@@ -90,5 +90,5 @@ Todos os scripts estão dentro do diretório [src](./src/), `./scr/`. Use os Jup
 
 Notas:
 * O Spotify removeu o feature para extrair as features de cada track da API.
-  <img align='center' src='./images/track-features.png' style='width:800px;'>
+  <img align='center' src='./figures/track-features.png' style='width:800px;'>
 * Agradeço ao meu mentor [Raphael Lima](https://www.linkedin.com/in/raphael-meira-lima/) pela orientação durante a criação deste projeto.

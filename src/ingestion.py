@@ -21,6 +21,9 @@ PROJECT_ROOT = os.path.abspath( # Getting the absolute normalized path version (
 sys.path.append(PROJECT_ROOT)
 from utils.ingestion_utils import *
 
+# Setting global variables with the directory path where the data will be loaded (Definindo as variáveis globais com o path do diretório onde os dados serão carregados).
+PATH = os.path.join(PROJECT_ROOT, 'data\\raw')
+
 # Setting the environment variables
 # Definindo as variáveis de ambiente
 CLIENT_ID = os.environ['CLIENT_ID_SPOTIFY']
@@ -43,10 +46,9 @@ df_bad = playlist_to_dataframe(bad_songs, token_type, access_token, label=0).dro
 df_good['duration_min'] = df_good['duration_ms'] / 60000
 df_good_2['duration_min'] = df_good_2['duration_ms'] / 60000
 df_bad['duration_min'] = df_bad['duration_ms'] / 60000
-display(df_good.head())
+print(df_good.head())
 
 # Loading each dataset into the `./data/raw/` directory (Carregando cada dataset no diretório `./data/raw/`)
-path = os.path.join(PROJECT_ROOT, 'data\\raw')
-df_good.to_csv(os.path.join(PROJECT_ROOT, 'df_good.csv'), index=False)
-df_good_2.to_csv(os.path.join(PROJECT_ROOT, 'df_good_2.csv'), index=False)
-df_bad.to_csv(os.path.join(PROJECT_ROOT, 'df_bad.csv'), index=False)
+df_good.to_csv(os.path.join(PATH, 'df_good.csv'), index=False)
+df_good_2.to_csv(os.path.join(PATH, 'df_good_2.csv'), index=False)
+df_bad.to_csv(os.path.join(PATH, 'df_bad.csv'), index=False)

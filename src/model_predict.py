@@ -35,7 +35,7 @@ simplefilter('ignore')
 # Checking tensorflow version (Verificando a versão do tensorflow)
 print(f'TensorFlow version: {tf.__version__}')
 
-# Defining global variables with the path of each directory with data (Definindo as variáveis globais com o path de cada diretório com os dados).
+# Setting global variables with the path of each directory with data (Definindo as variáveis globais com o path de cada diretório com os dados).
 PATH_T = os.path.join(PROJECT_ROOT, 'data\\transformed')
 PATH_P = os.path.join(PROJECT_ROOT, 'data\\preprocessed')
 PATH_M = os.path.join(PROJECT_ROOT, 'model')
@@ -132,9 +132,9 @@ model_item.get_layer('item_NN').set_weights(item_nn_weights)
 # Aplicando a normalização z-score em cada dataset, para eles terem média 0 e desvio padrão 1
 # We calculate the mean and standard deviation of the training set, and then apply the z-score to all dataset with the mean and standard deviation of the training set
 # Calculamos a média e desvio-padrão do training set, e então, aplicamos o z-score para todos os dataset com a média e o desvio-padrão do training set
-X = pd.read_csv(os.path.join(PATH_P, 'X.csv'))
+X_pre = pd.read_csv(os.path.join(PATH_P, 'X_pre.csv'))
 X_scaler = StandardScaler()
-X_norm = X_scaler.fit_transform(X)
+X_norm = X_scaler.fit_transform(X_pre)
 
 # Calculating the feature vector of all items (Calculando o vetor de features de todos os itens)
 item_feature_vectors = model_item.predict(X_norm, verbose=0)

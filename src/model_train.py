@@ -37,7 +37,7 @@ simplefilter('ignore')
 # Checking tensorflow version (Verificando a versão do tensorflow)
 print(f'TensorFlow version: {tf.__version__}')
 
-# Defining global variables with the path of each directory with data (Definindo as variáveis globais com o path de cada diretório com os dados).
+# Setting global variables with the path of each directory with data (Definindo as variáveis globais com o path de cada diretório com os dados).
 PATH_P = os.path.join(PROJECT_ROOT, 'data\\preprocessed')
 PATH_M = os.path.join(PROJECT_ROOT, 'model')
 
