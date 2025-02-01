@@ -21,13 +21,13 @@ PROJECT_ROOT = os.path.abspath( # Getting the absolute normalized path version (
 sys.path.append(PROJECT_ROOT)
 from utils.ingestion_utils import *
 
-# Setting global variables with the directory path where the data will be loaded (Definindo as variáveis globais com o path do diretório onde os dados serão carregados).
-PATH = os.path.join(PROJECT_ROOT, 'data\\raw')
-
 # Setting the environment variables
 # Definindo as variáveis de ambiente
 CLIENT_ID = os.environ['CLIENT_ID_SPOTIFY']
 CLIENT_SECRET = os.environ['CLIENT_SECRET_SPOTIFY']
+
+# Setting global variables with the directory path where the data will be loaded (Definindo as variáveis globais com o path do diretório onde os dados serão carregados).
+PATH = os.path.join(PROJECT_ROOT, 'data\\raw')
 
 # Requesting Spotify Authorization (Requisitando a autorização do Spotify)
 access_token, token_type, token_expires = request_auth(client_id=CLIENT_ID, client_secret=CLIENT_SECRET)

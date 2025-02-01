@@ -28,14 +28,14 @@ from sklearn.preprocessing import StandardScaler
 from warnings import simplefilter
 simplefilter('ignore')
 
+# Setting the environment variables (Definindo as variáveis de ambiente)
+CLIENT_ID = os.environ['CLIENT_ID_SPOTIFY']
+CLIENT_SECRET = os.environ['CLIENT_SECRET_SPOTIFY']
+
 # Setting global variables with the path of each directory with data (Definindo as variáveis globais com o path de cada diretório com os dados).
 PATH_T = os.path.join(PROJECT_ROOT, 'data\\transformed')
 PATH_P = os.path.join(PROJECT_ROOT, 'data\\preprocessed')
 PATH_M = os.path.join(PROJECT_ROOT, 'model')
-
-# Setting the environment variables (Definindo as variáveis de ambiente)
-CLIENT_ID = os.environ['CLIENT_ID_SPOTIFY']
-CLIENT_SECRET = os.environ['CLIENT_SECRET_SPOTIFY']
 
 # Reading pre-processed datasets (Lendo os datasets pré-processados)
 item_train_norm = pd.read_csv(os.path.join(PATH_P, 'item_train_norm.csv'))
