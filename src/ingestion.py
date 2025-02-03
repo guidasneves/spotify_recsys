@@ -2,13 +2,8 @@
 # Pacotes utilizados no sistema
 import os
 import sys
-from requests import post, get
-from base64 import b64encode
 from dotenv import load_dotenv
 load_dotenv() # access environment variables (acessa as variáveis de ambiente)
-
-import pandas as pd
-import numpy as np
 
 PROJECT_ROOT = os.path.abspath( # Getting the absolute normalized path version (Obtendo a versão absoluta normalizada do path)
     os.path.join( # Concatenating the paths (Concatenando os paths)

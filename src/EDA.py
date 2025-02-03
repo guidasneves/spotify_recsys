@@ -16,10 +16,8 @@ from utils.plot_utils import *
 
 import pandas as pd
 import numpy as np
-import numpy.ma as ma
 from sklearn.preprocessing import StandardScaler
 from sklearn.decomposition import PCA
-from random import randint
 
 import matplotlib.pyplot as plt
 plt.rcParams['figure.figsize'] = (15, 15) # set default size of plots (definindo o tamanho padrão dos plots)

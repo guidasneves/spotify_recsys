@@ -2,7 +2,6 @@
 # Pacotes utilizados no sistema
 import os
 import sys
-from requests import get, post
 
 PROJECT_ROOT = os.path.abspath( # Getting Obtaining the absolute normalized version of the project root path (Obtendo a versão absoluta normalizada do path raíz do projeto)
     os.path.join( # Concatenating the paths (Concatenando os paths)
@@ -22,7 +21,6 @@ import pandas as pd
 import numpy as np
 from tensorflow.keras.optimizers import Adam
 from tensorflow.keras.losses import MeanSquaredError
-from tensorflow.keras.backend import clear_session
 from sklearn.preprocessing import StandardScaler
 
 from warnings import simplefilter
