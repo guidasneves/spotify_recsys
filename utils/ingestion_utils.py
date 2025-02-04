@@ -2,6 +2,7 @@ from requests import post, get
 from base64 import b64encode
 import pandas as pd
 
+
 def request_auth(client_id, client_secret):
     """
     [EN-US]
@@ -58,6 +59,7 @@ def request_auth(client_id, client_secret):
         
     return access_token, token_type, token_expires
 
+
 def get_playlist(playlist, token_type, access_token, offset=0, limit=100):
     """
     [EN-US]
@@ -97,6 +99,7 @@ def get_playlist(playlist, token_type, access_token, offset=0, limit=100):
     
     return response.json()
 
+
 def track_features(track_id, token_type, access_token):
     """
     Deprecated
@@ -130,6 +133,7 @@ def track_features(track_id, token_type, access_token):
         print('Error! Track data not extracted.')
     
     return response.json()    
+
 
 def playlist_to_dataframe(playlist_endpoint, token_type, access_token, offset=0, limit=100, label=None):
     """

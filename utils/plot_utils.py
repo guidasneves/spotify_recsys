@@ -2,6 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from random import randint
 
+
 def get_pairs(df):
     """
     [EN-US]
@@ -33,6 +34,7 @@ def get_pairs(df):
         pairs.append((x, y))
     
     return pairs
+
 
 def plot_hist_vs(X):
     """
@@ -70,6 +72,7 @@ def plot_hist_vs(X):
                 break
     plt.legend(loc='best')
     plt.show()
+
 
 def plot_history(history):
     """

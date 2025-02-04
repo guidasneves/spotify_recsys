@@ -16,6 +16,7 @@ PROJECT_ROOT = os.path.abspath( # Getting the absolute normalized path version (
 sys.path.append(PROJECT_ROOT)
 from utils.ingestion_utils import *
 
+
 # Setting the environment variables
 # Definindo as variáveis de ambiente
 CLIENT_ID = os.environ['CLIENT_ID_SPOTIFY']

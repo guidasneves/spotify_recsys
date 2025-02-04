@@ -28,6 +28,7 @@ plt.rcParams['figure.figsize'] = (15, 15) # set default size of plots (definindo
 from warnings import simplefilter
 simplefilter('ignore')
 
+
 # Checking tensorflow version (Verificando a versão do tensorflow)
 print(f'TensorFlow version: {tf.__version__}')
 

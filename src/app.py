@@ -26,6 +26,7 @@ from sklearn.preprocessing import StandardScaler
 from warnings import simplefilter
 simplefilter('ignore')
 
+
 # Setting the environment variables (Definindo as variáveis de ambiente)
 CLIENT_ID = os.environ['CLIENT_ID_SPOTIFY']
 CLIENT_SECRET = os.environ['CLIENT_SECRET_SPOTIFY']

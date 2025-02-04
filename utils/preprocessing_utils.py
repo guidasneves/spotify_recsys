@@ -2,6 +2,7 @@ import numpy as np
 import pandas as pd
 import tensorflow as tf
 
+
 def get_user_dataset(user_vec, item_df):
     """
     [EN-US]
@@ -27,6 +28,7 @@ def get_user_dataset(user_vec, item_df):
     # Transforming the numpy array into a pandas DataFrame (Transformando o array numpy em um DataFrame pandas).
     user_df = pd.DataFrame(user_df, columns=features)
     return user_df
+
 
 def df_to_tfdataset(X, y, shuffle_buffer=1000, batch_size=32, shuffle=True):
     """

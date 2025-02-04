@@ -24,6 +24,7 @@ plt.rcParams['figure.figsize'] = (15, 15) # set default size of plots (definindo
 import seaborn as sns
 import plotly.express as px
 
+
 # Setting global variables with the path of each directory with data (Definindo as variáveis globais com o path de cada diretório com os dados).
 PATH_R = os.path.join(PROJECT_ROOT, 'data\\raw')
 PATH_T = os.path.join(PROJECT_ROOT, 'data\\transformed')

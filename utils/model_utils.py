@@ -8,6 +8,7 @@ from tensorflow.keras.losses import MeanSquaredError
 from tensorflow.keras.backend import clear_session
 import numpy as np
 
+
 class L2_Norm(Layer):
     """
     [EN-US]
@@ -33,6 +34,7 @@ class L2_Norm(Layer):
         """
         # Returning the calculation that will be performed (Retornando o cálculo que será realizado).
         return l2_normalize(X, axis=1)
+
 
 def user_nn(units=[256, 128, 64], num_outputs=32, lambda_r=1e-3):
     """
@@ -65,6 +67,7 @@ def user_nn(units=[256, 128, 64], num_outputs=32, lambda_r=1e-3):
     ], name='user_NN')
     return user_NN
 
+
 def item_nn(units=[256, 128, 64], num_outputs=32, lambda_r=1e-3):
     """
     [EN-US]
@@ -95,6 +98,7 @@ def item_nn(units=[256, 128, 64], num_outputs=32, lambda_r=1e-3):
         Dense(units=num_outputs, activation='linear', name='item_output')
     ], name='item_NN')
     return item_NN
+
 
 def model_compile(
     optimizer,
@@ -188,6 +192,7 @@ def model_compile(
     model.compile(loss=loss, optimizer=opt, metrics=['auc'])
 
     return model
+
 
 def hiperparams_tune(hiperparams):
     """

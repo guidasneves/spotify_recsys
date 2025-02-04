@@ -1,5 +1,6 @@
 from requests import post, get
 
+
 def get_user(token_type, access_token):
     """
     [EN-US]
@@ -30,6 +31,7 @@ def get_user(token_type, access_token):
         print('Error! User data not extracted.')
     
     return response.json()['id']
+
 
 def create_playlist(user_id, token_type, access_token):
     """
@@ -74,6 +76,7 @@ def create_playlist(user_id, token_type, access_token):
         print('Playlist creation not authorized!')
 
     return request.json()['id']
+
 
 def add_tracks(playlist_id, uris, token_type, access_token, position=0):
     """

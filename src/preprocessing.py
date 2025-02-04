@@ -19,6 +19,7 @@ import numpy as np
 from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import train_test_split
 
+
 # Setting global variables with the path of each directory with data (Definindo as variáveis globais com o path de cada diretório com os dados).
 PATH_R = os.path.join(PROJECT_ROOT, 'data\\raw')
 PATH_T = os.path.join(PROJECT_ROOT, 'data\\transformed')
