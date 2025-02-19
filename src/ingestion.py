@@ -22,7 +22,8 @@ from utils.ingestion_utils import *
 CLIENT_ID = os.environ['CLIENT_ID_SPOTIFY']
 CLIENT_SECRET = os.environ['CLIENT_SECRET_SPOTIFY']
 
-# Setting global variables with the directory path where the data will be loaded (Definindo as variáveis globais com o path do diretório onde os dados serão carregados).
+# Setting the global variable with the path of the directory where the data will be loaded
+# Definindo a variável global com o path do diretório onde os dados serão carregados
 PATH = os.path.join(PROJECT_ROOT, 'data\\raw')
 
 # Requesting Spotify Authorization (Requisitando a autorização do Spotify)
