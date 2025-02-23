@@ -194,7 +194,7 @@ def model_compile(
     return model
 
 
-def hiperparams_tune(hiperparams):
+def hyperparams_tune(hyperparams):
     """
     [EN-US]
     Setting the model for hyperparameter optimization.
@@ -214,8 +214,8 @@ def hiperparams_tune(hiperparams):
     threshold = .5
     # Setting the hyperparameters
     # Definindo os hiperparâmetros
-    LR = hiperparams[0]
-    lambda_r = hiperparams[1]
+    LR = hyperparams[0]
+    lambda_r = hyperparams[1]
     # Setting the loss and the optimizer
     # Definindo a loss e o otimizador
     OPT = Adam(learning_rate=LR)

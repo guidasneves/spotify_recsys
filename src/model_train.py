@@ -62,7 +62,7 @@ X_opt = item_train_norm.copy()
 user_opt = user_train_norm.copy()
 
 # Performing Bayesian optimization (Performando a bayesian optimization)
-opt = gp_minimize(hiperparams_tune, space, random_state=42, verbose=0, n_calls=25, n_random_starts=10)
+opt = gp_minimize(hyperparams_tune, space, random_state=42, verbose=0, n_calls=25, n_random_starts=10)
 # Output with the best combinations of hyperparameters
 # Output com as melhores combinações dos hiperparâmetros
 print(f'Learning rate: {opt.x[0]}\nLambda: {opt.x[1]}')
