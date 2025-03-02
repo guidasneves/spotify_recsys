@@ -4,13 +4,13 @@
 
 **[EN-US]**
 
-* **Medium article** about this project in English: [Spotify Tracks Recommender System with Deep Learning](https://medium.com/@guineves.py/spotify-tracks-recommender-system-with-deep-learning-45d1bb3d3788);
+* **Medium article** about this project in English: [Spotify Tracks Recommender System with Deep Learning](https://medium.com/@guineves.py/45d1bb3d3788);
 * Complete code for this project, with all detailed explanations in English and Portuguese: [notebooks](./notebooks);
 * Complete scripts for this project in English and Portuguese: [src](./src/).
 
 **[PT-BR]**
 
-* **Artigo no Medium** desse projeto em inglês: [Spotify Tracks Recommender System with Deep Learning](https://medium.com/@guineves.py/spotify-tracks-recommender-system-with-deep-learning-45d1bb3d3788);
+* **Artigo no Medium** desse projeto em inglês: [Spotify Tracks Recommender System with Deep Learning](https://medium.com/@guineves.py/45d1bb3d3788);
 * Códigos completos desse projeto, com todas as explicações detalhas em inglês e em português: [notebooks](./notebooks);
 * Scripts completos desse projeto em inglês e em português: [src](./src/).
 
