@@ -1,5 +1,5 @@
 <a name="1"></a>
-# End to End Spotify Recommender System (Sistema de Recomendação Spotify de Ponta a Ponta)
+# End-to-End Spotify Recommender System (Sistema de Recomendação Spotify de Ponta a Ponta)
 <img align='center' src='./figures/content-based-filtering.png' style='width:800px;'>
 
 **[EN-US]**
