@@ -82,7 +82,6 @@ All scripts are inside the [src](./src/), `./scr/` directory. Use Jupiter Notebo
 
 Notes:
 * Spotify has removed the feature to extract the features of each track from the API.
-* I would like to thank my mentor [Raphael Lima](https://www.linkedin.com/in/raphael-meira-lima/) for his guidance throughout the creation of this project.
 
 **[PT-BR]**
 
@@ -91,4 +90,3 @@ Todos os scripts estão dentro do diretório [src](./src/), `./scr/`. Use os Jup
 Notas:
 * O Spotify removeu o feature para extrair as features de cada track da API.
   <img align='center' src='./figures/track-features.png' style='width:800px;'>
-* Agradeço ao meu mentor [Raphael Lima](https://www.linkedin.com/in/raphael-meira-lima/) pela orientação durante a criação deste projeto.
