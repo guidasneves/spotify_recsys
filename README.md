@@ -30,6 +30,8 @@ Esse repositório contêm a implementação de um sistema de recomendação de m
 
 O sistema foi criado de ponta a ponta, ou seja, desde a conexão e autorização com a [API do Spotify](https://developer.spotify.com/), extração dos dados da API, realização da análise exploratória e do pré-processamento dos dados, definição do modelo e inferência, dada as músicas recomendadas, elas são adicionadas em uma playlist do Spotify.
 
+<img align='center' src='./figures/architecture.drawio.png' style='width:800px;'>
+
 O algoritmo do Content-Based Filtering foi criado utilizando o framework [tensorflow](https://www.tensorflow.org/?hl=pt-br).
 
 <a name="3"></a>
@@ -89,4 +91,4 @@ Todos os scripts estão dentro do diretório [src](./src/), `./scr/`. Use os Jup
 
 Notas:
 * O Spotify removeu o feature para extrair as features de cada track da API.
-  <img align='center' src='./figures/track-features.png' style='width:800px;'>
+<img align='center' src='./figures/track-features.png' style='width:800px;'>
